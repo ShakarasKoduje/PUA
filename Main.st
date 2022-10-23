@@ -37,13 +37,15 @@ PROGRAM _CYCLIC
 			ZegarTOF[1]();
 			Dom.Korytarz.doLampa[1] := ZegarTOF[1].Q;
 		5: //Œciemniacz\
+			//POTENCJOMETR
 //			Skaluj[1].x := INT_TO_REAL(Dom.Jadalnia.aiSciemniacz[1]);
 //			Skaluj[1].x1 := 0;
 //			Skaluj[1].y1 := 13000;
 //			Skaluj[1].x2 := 32767;
 //			Skaluj[1].y2 := 30000;
 //			Skaluj[1]();
-		//	Dom.Jadalnia.aoLampa[1] := REAL_TO_INT(Skaluj[1].y);
+			//	Dom.Jadalnia.aoLampa[1] := REAL_TO_INT(Skaluj[1].y);
+			//TERMOMETR
 			Skaluj[1].x := INT_TO_REAL(Dom.Jadalnia.aiSciemniacz[2]);
 			Skaluj[1].x1 := 320; (*dolna temperatura w termometrze *)
 			Skaluj[1].y1 := 13000; (*dolna granica w ktorej, zarowka jeszcze nie swieci *)
