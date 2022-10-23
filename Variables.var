@@ -1,0 +1,12 @@
+VAR
+	Dom : HouseTyp;
+	uiLightControlMode : USINT; (* tryb pracy oswietlenia : 1 - klasyczne sterowanie, 2- orzycisk dwustanowy, 3 -swiatlo pulsujace ze stalym zboczem, 4 swiatlo pulsujace ze zmiennym zboczem *)
+	ZegarTon : ARRAY[1..10] OF TON;
+
+uiZegarTon_PT : REAL;
+END_VAR
+
+VAR RETAIN (*retain podtrzymuje w pamieci zmienna *)
+	uiZegarTON_PT : ARRAY[1..10] OF REAL; (*Czas zadany w sekundach *)
+	 
+END_VAR
