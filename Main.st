@@ -1,7 +1,7 @@
 
 PROGRAM _INIT
 	(* Insert code here *)
-	uiLightControlMode := 4;
+	uiLightControlMode := 5; //case 5
 	//uiZegar_PT[1] := 1
 	(* ALE NIE WIEM CZY PONIZSZE USTAWIENIA DZIALAJA *)
 	uiZegarTON_PT[1] := 1;
@@ -36,7 +36,23 @@ PROGRAM _CYCLIC
 			ZegarTOF[1].PT := REAL_TO_TIME(uiZegarTOF_PT[1] *1000);
 			ZegarTOF[1]();
 			Dom.Korytarz.doLampa[1] := ZegarTOF[1].Q;
-			
+		5: //Œciemniacz\
+//			Skaluj[1].x := INT_TO_REAL(Dom.Jadalnia.aiSciemniacz[1]);
+//			Skaluj[1].x1 := 0;
+//			Skaluj[1].y1 := 13000;
+//			Skaluj[1].x2 := 32767;
+//			Skaluj[1].y2 := 30000;
+//			Skaluj[1]();
+		//	Dom.Jadalnia.aoLampa[1] := REAL_TO_INT(Skaluj[1].y);
+			Skaluj[1].x := INT_TO_REAL(Dom.Jadalnia.aiSciemniacz[2]);
+			Skaluj[1].x1 := 320; (*dolna temperatura w termometrze *)
+			Skaluj[1].y1 := 13000; (*dolna granica w ktorej, zarowka jeszcze nie swieci *)
+			Skaluj[1].x2 := 370; (*gorna granica temperatury *)
+			Skaluj[1].y2 := 30000; (*gorna granica swiecenia zarowk *)
+			Skaluj[1]();
+			Dom.Jadalnia.aoLampa[1] := REAL_TO_INT(Skaluj[1].y);
+		
+		
 		//Dom.Korytarz.doLampa[1] :=
 	END_CASE	
 	
